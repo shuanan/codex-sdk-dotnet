@@ -1,0 +1,8360 @@
+[
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   }
+  ],
+  "name": "initialize",
+  "note": "handshake only; metadata exposed by Codex.metadata",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "metadata",
+    "value": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "555f31a8-f809-4de5-9427-aac1d5427852",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "account/login/start",
+    "params": {
+     "apiKey": "sk-test-123",
+     "type": "apiKey"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "account/read",
+    "params": {
+     "refreshToken": false
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "account/read",
+    "params": {
+     "refreshToken": true
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method"
+    ],
+    "kind": "request",
+    "method": "account/logout",
+    "params": null
+   }
+  ],
+  "name": "account",
+  "note": "login_api_key, account(), account(refresh_token=True), logout()",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "type": "apiKey"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "account": {
+       "type": "apiKey"
+      },
+      "requiresOpenaiAuth": true
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "account": {
+       "type": "apiKey"
+      },
+      "requiresOpenaiAuth": true
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "result": {}
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "login_api_key",
+    "value": null
+   },
+   {
+    "label": "account",
+    "value": {
+     "account": {
+      "type": "apiKey"
+     },
+     "requiresOpenaiAuth": true
+    }
+   },
+   {
+    "label": "account_refresh",
+    "value": {
+     "account": {
+      "type": "apiKey"
+     },
+     "requiresOpenaiAuth": true
+    }
+   },
+   {
+    "label": "logout",
+    "value": null
+   }
+  ],
+  "server": [
+   {
+    "id": "4df741e7-3bf2-4cf0-96c8-736afded2cb0",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "a59a4ef8-cd5a-4cd2-838d-c5e488ace76b",
+    "result": {
+     "type": "apiKey"
+    }
+   },
+   {
+    "id": "64108b4c-b6a2-4a51-ab46-0d8abea2bfc0",
+    "result": {
+     "account": {
+      "type": "apiKey"
+     },
+     "requiresOpenaiAuth": true
+    }
+   },
+   {
+    "id": "43a83eb9-6bd7-42da-b081-c8bb6c531937",
+    "result": {
+     "account": {
+      "type": "apiKey"
+     },
+     "requiresOpenaiAuth": true
+    }
+   },
+   {
+    "id": "dccad93e-89f1-428d-8f63-25266ddddb7c",
+    "result": {}
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "account/login/start",
+    "params": {
+     "type": "chatgpt"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "account/login/start",
+    "params": {
+     "type": "chatgptDeviceCode"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "account/login/cancel",
+    "params": {
+     "loginId": "login-2"
+    }
+   }
+  ],
+  "name": "login_chatgpt",
+  "note": "browser login handle wait(); device-code login handle cancel()",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "authUrl": "https://auth.example/login",
+      "loginId": "login-1",
+      "type": "chatgpt"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "method": "account/login/completed",
+     "params": {
+      "error": null,
+      "loginId": "login-1",
+      "success": true
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "loginId": "login-2",
+      "type": "chatgptDeviceCode",
+      "userCode": "ABCD-1234",
+      "verificationUrl": "https://auth.example/device"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "status": "canceled"
+     }
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "browser",
+    "value": {
+     "auth_url": "https://auth.example/login",
+     "login_id": "login-1"
+    }
+   },
+   {
+    "label": "browser_wait",
+    "value": {
+     "loginId": "login-1",
+     "success": true
+    }
+   },
+   {
+    "label": "device",
+    "value": {
+     "login_id": "login-2",
+     "user_code": "ABCD-1234",
+     "verification_url": "https://auth.example/device"
+    }
+   },
+   {
+    "label": "device_cancel",
+    "value": {
+     "status": "canceled"
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "0c9f0579-1725-40e1-b6d9-b802b09fa6c2",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "64c457fd-c1f8-4b2d-93c0-218422d80ecc",
+    "result": {
+     "authUrl": "https://auth.example/login",
+     "loginId": "login-1",
+     "type": "chatgpt"
+    }
+   },
+   {
+    "method": "account/login/completed",
+    "params": {
+     "error": null,
+     "loginId": "login-1",
+     "success": true
+    }
+   },
+   {
+    "id": "11790ea2-b60c-4a70-9ed0-426e375916d2",
+    "result": {
+     "loginId": "login-2",
+     "type": "chatgptDeviceCode",
+     "userCode": "ABCD-1234",
+     "verificationUrl": "https://auth.example/device"
+    }
+   },
+   {
+    "id": "47dfc08f-8d88-4456-bd2d-e6317802a8d5",
+    "result": {
+     "status": "canceled"
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "baseInstructions": "Base rules.",
+     "config": {
+      "model_reasoning_effort": "high"
+     },
+     "cwd": "/repo",
+     "developerInstructions": "Dev rules.",
+     "ephemeral": true,
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "personality": "pragmatic",
+     "serviceName": "golden",
+     "serviceTier": "fast"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "sandbox": "read-only"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "sandbox": "workspace-write"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "sandbox": "danger-full-access"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "never"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   }
+  ],
+  "name": "thread_start",
+  "note": "defaults, then each option, each sandbox, each approval mode",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/repo",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/repo",
+       "ephemeral": true,
+       "id": "thread-2",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-3",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-4",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-5",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 6,
+    "msg": {
+     "result": {
+      "approvalPolicy": "never",
+      "approvalsReviewer": "user",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-6",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 7,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-7",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "default",
+    "value": "thread-1"
+   },
+   {
+    "label": "options",
+    "value": "thread-2"
+   },
+   {
+    "label": "sandbox=read_only",
+    "value": "thread-3"
+   },
+   {
+    "label": "sandbox=workspace_write",
+    "value": "thread-4"
+   },
+   {
+    "label": "sandbox=full_access",
+    "value": "thread-5"
+   },
+   {
+    "label": "approval_mode=deny_all",
+    "value": "thread-6"
+   },
+   {
+    "label": "approval_mode=auto_review",
+    "value": "thread-7"
+   }
+  ],
+  "server": [
+   {
+    "id": "e2cbf79d-b13c-4074-9407-1e029b0544d3",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "48c98641-e11b-489e-bdf8-9f3bdf62046d",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "abcf2d1a-c643-4dc2-8a20-2ed82ebd4369",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/repo",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/repo",
+      "ephemeral": true,
+      "id": "thread-2",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "9faf3ed4-220a-4138-9da1-8786ed77d4f9",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-3",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "42d5fbcb-dc18-42cb-b634-d20309c69cdc",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-4",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "f928cfae-eb7b-4ea5-b94c-5fabe896b462",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-5",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "4feb8925-3336-4a92-945b-e8167b212b95",
+    "result": {
+     "approvalPolicy": "never",
+     "approvalsReviewer": "user",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-6",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "4f0ed65e-295d-4803-998c-98a512c95deb",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-7",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "hello",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "run_text",
+  "note": "thread.run('hello') with no options",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "hello",
+         "type": "text"
+        }
+       ],
+       "id": "item-1",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-2",
+       "text": "echo: hello",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "result",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: hello",
+     "id": "turn-1",
+     "item_ids": [
+      "item-1",
+      "item-2"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "07d5e1f2-60c1-46ea-9122-ebe60c193f9a",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "94f990c4-2a1c-4914-891f-d1645d265b4c",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "af6cddd8-1da4-4c8d-b90c-527825796107",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "hello",
+        "type": "text"
+       }
+      ],
+      "id": "item-1",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-2",
+      "text": "echo: hello",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "approvalPolicy": "never",
+     "cwd": "/repo",
+     "effort": "high",
+     "input": [
+      {
+       "text": "describe",
+       "type": "text"
+      },
+      {
+       "type": "image",
+       "url": "https://example.com/cat.png"
+      },
+      {
+       "path": "/tmp/dog.png",
+       "type": "localImage"
+      },
+      {
+       "name": "review",
+       "path": "/skills/review/SKILL.md",
+       "type": "skill"
+      },
+      {
+       "name": "repo",
+       "path": "app://repo",
+       "type": "mention"
+      }
+     ],
+     "model": "gpt-5.5",
+     "outputSchema": {
+      "additionalProperties": false,
+      "properties": {
+       "answer": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "answer"
+      ],
+      "type": "object"
+     },
+     "personality": "friendly",
+     "sandboxPolicy": {
+      "networkAccess": false,
+      "type": "readOnly"
+     },
+     "serviceTier": "flex",
+     "serviceTierForTurn": "priority",
+     "summary": "concise",
+     "threadId": "thread-1",
+     "turnTrigger": "golden-test"
+    }
+   }
+  ],
+  "name": "run_list_options",
+  "note": "list input of every item type + output_schema + effort + all turn options",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "describe",
+         "type": "text"
+        }
+       ],
+       "id": "item-1",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-2",
+       "text": "echo: describe",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "result",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: describe",
+     "id": "turn-1",
+     "item_ids": [
+      "item-1",
+      "item-2"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "1c5d19fd-f958-4731-b140-77d14c36cd9b",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "b7c31e48-502a-4710-80d5-febb43f64b9f",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "69d68c22-af64-48dc-b3eb-2802e6390aa6",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "describe",
+        "type": "text"
+       }
+      ],
+      "id": "item-1",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-2",
+      "text": "echo: describe",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "go",
+       "type": "text"
+      }
+     ],
+     "sandboxPolicy": {
+      "networkAccess": false,
+      "type": "readOnly"
+     },
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "go",
+       "type": "text"
+      }
+     ],
+     "sandboxPolicy": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "go",
+       "type": "text"
+      }
+     ],
+     "sandboxPolicy": {
+      "type": "dangerFullAccess"
+     },
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "input": [
+      {
+       "text": "go",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "run_turn_sandbox",
+  "note": "turn-level sandbox policy for each preset and auto_review approval",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "go",
+         "type": "text"
+        }
+       ],
+       "id": "item-1",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-2",
+       "text": "echo: go",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "go",
+         "type": "text"
+        }
+       ],
+       "id": "item-3",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-4",
+       "text": "echo: go",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-3",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-3",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "go",
+         "type": "text"
+        }
+       ],
+       "id": "item-5",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-3"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-6",
+       "text": "echo: go",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-3"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-3"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-3",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-4",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-4",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "go",
+         "type": "text"
+        }
+       ],
+       "id": "item-7",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-4"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-8",
+       "text": "echo: go",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-4"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-4"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-4",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "sandbox=read_only",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: go",
+     "id": "turn-1",
+     "item_ids": [
+      "item-1",
+      "item-2"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   },
+   {
+    "label": "sandbox=workspace_write",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: go",
+     "id": "turn-2",
+     "item_ids": [
+      "item-3",
+      "item-4"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   },
+   {
+    "label": "sandbox=full_access",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: go",
+     "id": "turn-3",
+     "item_ids": [
+      "item-5",
+      "item-6"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   },
+   {
+    "label": "approval_mode=auto_review",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: go",
+     "id": "turn-4",
+     "item_ids": [
+      "item-7",
+      "item-8"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "5bb34677-7574-4df8-8386-97a09f6789a2",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "8152c7f4-c4a9-4b2f-8e5e-0dbd6a759850",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "0d28587c-9eb0-4048-a306-b8bfc983cd1b",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "go",
+        "type": "text"
+       }
+      ],
+      "id": "item-1",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-2",
+      "text": "echo: go",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   },
+   {
+    "id": "04207018-40dc-43be-9950-f99eba85d8ad",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "go",
+        "type": "text"
+       }
+      ],
+      "id": "item-3",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-4",
+      "text": "echo: go",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   },
+   {
+    "id": "7b496576-4091-4663-bda6-058cfc6cc318",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-3",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-3",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "go",
+        "type": "text"
+       }
+      ],
+      "id": "item-5",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-3"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-6",
+      "text": "echo: go",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-3"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-3"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-3",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   },
+   {
+    "id": "9f0fdc77-2fbe-47db-b9d6-e10f2ab097be",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-4",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-4",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "go",
+        "type": "text"
+       }
+      ],
+      "id": "item-7",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-4"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-8",
+      "text": "echo: go",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-4"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-4"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-4",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "phases",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "commentary",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "unlabelled",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "final_response",
+  "note": "final_response selection across phases",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-1",
+       "phase": "commentary",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-1",
+       "phase": "commentary",
+       "text": "Looking around.",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-2",
+       "phase": "final_answer",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-2",
+       "phase": "final_answer",
+       "text": "The answer is 42.",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-3",
+       "phase": "commentary",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-3",
+       "phase": "commentary",
+       "text": "Done thinking.",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 25,
+        "inputTokens": 100,
+        "outputTokens": 50,
+        "reasoningOutputTokens": 12,
+        "totalTokens": 150
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 50,
+        "inputTokens": 200,
+        "outputTokens": 100,
+        "reasoningOutputTokens": 25,
+        "totalTokens": 300
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-4",
+       "phase": "commentary",
+       "text": "Only commentary.",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-3",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-3",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-5",
+       "text": "first unlabelled",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-3"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-6",
+       "text": "second unlabelled",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-3"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-3",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "phases",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "The answer is 42.",
+     "id": "turn-1",
+     "item_ids": [
+      "item-1",
+      "item-2",
+      "item-3"
+     ],
+     "item_types": [
+      "agentMessage",
+      "agentMessage",
+      "agentMessage"
+     ],
+     "items_count": 3,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 25,
+       "inputTokens": 100,
+       "outputTokens": 50,
+       "reasoningOutputTokens": 12,
+       "totalTokens": 150
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 50,
+       "inputTokens": 200,
+       "outputTokens": 100,
+       "reasoningOutputTokens": 25,
+       "totalTokens": 300
+      }
+     }
+    }
+   },
+   {
+    "label": "commentary",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": null,
+     "id": "turn-2",
+     "item_ids": [
+      "item-4"
+     ],
+     "item_types": [
+      "agentMessage"
+     ],
+     "items_count": 1,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": null
+    }
+   },
+   {
+    "label": "unlabelled",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "second unlabelled",
+     "id": "turn-3",
+     "item_ids": [
+      "item-5",
+      "item-6"
+     ],
+     "item_types": [
+      "agentMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": null
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "f9f432b1-be89-49ae-a09e-ebb9d08a3083",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "5786ca34-f4a5-410f-9fe9-6135690f953d",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "0679b1ca-4972-4f95-ad94-d466a012c170",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-1",
+      "phase": "commentary",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-1",
+      "phase": "commentary",
+      "text": "Looking around.",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-2",
+      "phase": "final_answer",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-2",
+      "phase": "final_answer",
+      "text": "The answer is 42.",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-3",
+      "phase": "commentary",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-3",
+      "phase": "commentary",
+      "text": "Done thinking.",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 25,
+       "inputTokens": 100,
+       "outputTokens": 50,
+       "reasoningOutputTokens": 12,
+       "totalTokens": 150
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 50,
+       "inputTokens": 200,
+       "outputTokens": 100,
+       "reasoningOutputTokens": 25,
+       "totalTokens": 300
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   },
+   {
+    "id": "9bdc55bc-17de-4627-9132-6202820970eb",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-4",
+      "phase": "commentary",
+      "text": "Only commentary.",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   },
+   {
+    "id": "580518e8-d360-4c78-841a-c5161cc2fb90",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-3",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-3",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-5",
+      "text": "first unlabelled",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-3"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-6",
+      "text": "second unlabelled",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-3"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-3",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "fail",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "run_failed",
+  "note": "failed turn raises with turn.error.message",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": {
+        "additionalDetails": null,
+        "codexErrorInfo": null,
+        "message": "model exploded"
+       },
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "failed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "raised",
+    "value": {
+     "message": "model exploded",
+     "type": "RuntimeError"
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "7a23478b-b434-4e5a-9206-1b5597a4c05b",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "7cd2f696-e1de-4083-9176-eeebab733ce1",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "26fd65f1-fdd3-4b65-a5d3-fb3a657e927a",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": {
+       "additionalDetails": null,
+       "codexErrorInfo": null,
+       "message": "model exploded"
+      },
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "failed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [],
+     "threadId": "thread-1",
+     "toolOutput": {
+      "name": "github",
+      "output": "issue body"
+     }
+    }
+   }
+  ],
+  "name": "external_message",
+  "note": "ExternalMessage -> toolOutput with empty input",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "",
+         "type": "text"
+        }
+       ],
+       "id": "item-1",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-2",
+       "text": "echo: ",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 5,
+        "inputTokens": 20,
+        "outputTokens": 10,
+        "reasoningOutputTokens": 2,
+        "totalTokens": 30
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 10,
+        "inputTokens": 40,
+        "outputTokens": 20,
+        "reasoningOutputTokens": 5,
+        "totalTokens": 60
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "result",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "echo: ",
+     "id": "turn-1",
+     "item_ids": [
+      "item-1",
+      "item-2"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     }
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "f8b2d86c-b074-4fcd-b16d-111ed9699dd4",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "cf2d5049-de2e-4cfd-9460-0a41af1670ba",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "54e788d5-a44e-4d0f-9bf3-8bed53e17794",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "",
+        "type": "text"
+       }
+      ],
+      "id": "item-1",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-2",
+      "text": "echo: ",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 5,
+       "inputTokens": 20,
+       "outputTokens": 10,
+       "reasoningOutputTokens": 2,
+       "totalTokens": 30
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 10,
+       "inputTokens": 40,
+       "outputTokens": 20,
+       "reasoningOutputTokens": 5,
+       "totalTokens": 60
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "stream",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "stream",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "stream",
+  "note": "turn.stream(): only this turn's notifications, ends at turn/completed",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "content": [
+        {
+         "text": "stream",
+         "type": "text"
+        }
+       ],
+       "id": "item-1",
+       "type": "userMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "stream",
+         "type": "text"
+        }
+       ],
+       "id": "item-1",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "content": [],
+       "id": "item-2",
+       "summary": [
+        "thinking"
+       ],
+       "type": "reasoning"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [],
+       "id": "item-2",
+       "summary": [
+        "thinking"
+       ],
+       "type": "reasoning"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-3",
+       "phase": "final_answer",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": "NOISE",
+      "itemId": "item-other",
+      "threadId": "thread-1",
+      "turnId": "turn-other"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": "Hello",
+      "itemId": "item-3",
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": ", ",
+      "itemId": "item-3",
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": "world",
+      "itemId": "item-3",
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-3",
+       "phase": "final_answer",
+       "text": "Hello, world",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 12,
+        "inputTokens": 50,
+        "outputTokens": 25,
+        "reasoningOutputTokens": 6,
+        "totalTokens": 75
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 25,
+        "inputTokens": 100,
+        "outputTokens": 50,
+        "reasoningOutputTokens": 12,
+        "totalTokens": 150
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 37,
+        "inputTokens": 150,
+        "outputTokens": 75,
+        "reasoningOutputTokens": 18,
+        "totalTokens": 225
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 75,
+        "inputTokens": 300,
+        "outputTokens": 150,
+        "reasoningOutputTokens": 37,
+        "totalTokens": 450
+       }
+      },
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "content": [
+        {
+         "text": "stream",
+         "type": "text"
+        }
+       ],
+       "id": "item-4",
+       "type": "userMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "stream",
+         "type": "text"
+        }
+       ],
+       "id": "item-4",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "content": [],
+       "id": "item-5",
+       "summary": [
+        "thinking"
+       ],
+       "type": "reasoning"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [],
+       "id": "item-5",
+       "summary": [
+        "thinking"
+       ],
+       "type": "reasoning"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-6",
+       "phase": "final_answer",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": "NOISE",
+      "itemId": "item-other",
+      "threadId": "thread-1",
+      "turnId": "turn-other"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": "Hello",
+      "itemId": "item-6",
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": ", ",
+      "itemId": "item-6",
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/agentMessage/delta",
+     "params": {
+      "delta": "world",
+      "itemId": "item-6",
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-6",
+       "phase": "final_answer",
+       "text": "Hello, world",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 12,
+        "inputTokens": 50,
+        "outputTokens": 25,
+        "reasoningOutputTokens": 6,
+        "totalTokens": 75
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 25,
+        "inputTokens": 100,
+        "outputTokens": 50,
+        "reasoningOutputTokens": 12,
+        "totalTokens": 150
+       }
+      },
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "thread/tokenUsage/updated",
+     "params": {
+      "threadId": "thread-1",
+      "tokenUsage": {
+       "last": {
+        "cachedInputTokens": 37,
+        "inputTokens": 150,
+        "outputTokens": 75,
+        "reasoningOutputTokens": 18,
+        "totalTokens": 225
+       },
+       "modelContextWindow": 272000,
+       "total": {
+        "cachedInputTokens": 75,
+        "inputTokens": 300,
+        "outputTokens": 150,
+        "reasoningOutputTokens": 37,
+        "totalTokens": 450
+       }
+      },
+      "turnId": "turn-2"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-2",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "turn_id",
+    "value": "turn-1"
+   },
+   {
+    "label": "methods",
+    "value": [
+     "turn/started",
+     "item/started",
+     "item/completed",
+     "item/started",
+     "item/completed",
+     "item/started",
+     "item/agentMessage/delta",
+     "item/agentMessage/delta",
+     "item/agentMessage/delta",
+     "item/completed",
+     "thread/tokenUsage/updated",
+     "thread/tokenUsage/updated",
+     "turn/completed"
+    ]
+   },
+   {
+    "label": "deltas",
+    "value": [
+     "Hello",
+     ", ",
+     "world"
+    ]
+   },
+   {
+    "label": "result_via_run",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "Hello, world",
+     "id": "turn-2",
+     "item_ids": [
+      "item-4",
+      "item-5",
+      "item-6"
+     ],
+     "item_types": [
+      "userMessage",
+      "reasoning",
+      "agentMessage"
+     ],
+     "items_count": 3,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": {
+      "last": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 37,
+       "inputTokens": 150,
+       "outputTokens": 75,
+       "reasoningOutputTokens": 18,
+       "totalTokens": 225
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cacheWriteInputTokens": 0,
+       "cachedInputTokens": 75,
+       "inputTokens": 300,
+       "outputTokens": 150,
+       "reasoningOutputTokens": 37,
+       "totalTokens": 450
+      }
+     }
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "7605714d-8c74-4786-9cdd-7be1ab4d1767",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "cc51744e-d114-479c-a164-ee0937cab860",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "444bfeda-5d71-40d3-b817-0065e9589f84",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "content": [
+       {
+        "text": "stream",
+        "type": "text"
+       }
+      ],
+      "id": "item-1",
+      "type": "userMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "stream",
+        "type": "text"
+       }
+      ],
+      "id": "item-1",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "content": [],
+      "id": "item-2",
+      "summary": [
+       "thinking"
+      ],
+      "type": "reasoning"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [],
+      "id": "item-2",
+      "summary": [
+       "thinking"
+      ],
+      "type": "reasoning"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-3",
+      "phase": "final_answer",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": "NOISE",
+     "itemId": "item-other",
+     "threadId": "thread-1",
+     "turnId": "turn-other"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": "Hello",
+     "itemId": "item-3",
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": ", ",
+     "itemId": "item-3",
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": "world",
+     "itemId": "item-3",
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-3",
+      "phase": "final_answer",
+      "text": "Hello, world",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 12,
+       "inputTokens": 50,
+       "outputTokens": 25,
+       "reasoningOutputTokens": 6,
+       "totalTokens": 75
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 25,
+       "inputTokens": 100,
+       "outputTokens": 50,
+       "reasoningOutputTokens": 12,
+       "totalTokens": 150
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 37,
+       "inputTokens": 150,
+       "outputTokens": 75,
+       "reasoningOutputTokens": 18,
+       "totalTokens": 225
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 75,
+       "inputTokens": 300,
+       "outputTokens": 150,
+       "reasoningOutputTokens": 37,
+       "totalTokens": 450
+      }
+     },
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   },
+   {
+    "id": "d4aef6be-5577-4bfc-8ce8-8d0d37e78de8",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "content": [
+       {
+        "text": "stream",
+        "type": "text"
+       }
+      ],
+      "id": "item-4",
+      "type": "userMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "stream",
+        "type": "text"
+       }
+      ],
+      "id": "item-4",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "content": [],
+      "id": "item-5",
+      "summary": [
+       "thinking"
+      ],
+      "type": "reasoning"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [],
+      "id": "item-5",
+      "summary": [
+       "thinking"
+      ],
+      "type": "reasoning"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-6",
+      "phase": "final_answer",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": "NOISE",
+     "itemId": "item-other",
+     "threadId": "thread-1",
+     "turnId": "turn-other"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": "Hello",
+     "itemId": "item-6",
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": ", ",
+     "itemId": "item-6",
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/agentMessage/delta",
+    "params": {
+     "delta": "world",
+     "itemId": "item-6",
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-6",
+      "phase": "final_answer",
+      "text": "Hello, world",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 12,
+       "inputTokens": 50,
+       "outputTokens": 25,
+       "reasoningOutputTokens": 6,
+       "totalTokens": 75
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 25,
+       "inputTokens": 100,
+       "outputTokens": 50,
+       "reasoningOutputTokens": 12,
+       "totalTokens": 150
+      }
+     },
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "thread/tokenUsage/updated",
+    "params": {
+     "threadId": "thread-1",
+     "tokenUsage": {
+      "last": {
+       "cachedInputTokens": 37,
+       "inputTokens": 150,
+       "outputTokens": 75,
+       "reasoningOutputTokens": 18,
+       "totalTokens": 225
+      },
+      "modelContextWindow": 272000,
+      "total": {
+       "cachedInputTokens": 75,
+       "inputTokens": 300,
+       "outputTokens": 150,
+       "reasoningOutputTokens": 37,
+       "totalTokens": 450
+      }
+     },
+     "turnId": "turn-2"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-2",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "wait",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/steer",
+    "params": {
+     "expectedTurnId": "turn-1",
+     "input": [
+      {
+       "text": "more please",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "steer",
+  "note": "turn('wait') then steer('more please') then run()",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-1",
+       "phase": "commentary",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "turnId": "turn-1"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "content": [
+        {
+         "text": "more please",
+         "type": "text"
+        }
+       ],
+       "id": "item-2",
+       "type": "userMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "item/completed",
+     "params": {
+      "completedAtMs": 1700000000001,
+      "item": {
+       "id": "item-3",
+       "phase": "final_answer",
+       "text": "steered answer",
+       "type": "agentMessage"
+      },
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "completed"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "steer",
+    "value": {
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "label": "result",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": "steered answer",
+     "id": "turn-1",
+     "item_ids": [
+      "item-2",
+      "item-3"
+     ],
+     "item_types": [
+      "userMessage",
+      "agentMessage"
+     ],
+     "items_count": 2,
+     "started_at": 1700000000,
+     "status": "completed",
+     "usage": null
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "75821d7d-8d47-48d1-8ceb-6fae3e677c3a",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "9a2c5db6-9d35-467e-8bf4-189252855817",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "d701c1f1-55cf-477b-ba6d-5c37f8517017",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-1",
+      "phase": "commentary",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "id": "cc89e83d-782b-4a42-b604-056c6dc661ba",
+    "result": {
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "content": [
+       {
+        "text": "more please",
+        "type": "text"
+       }
+      ],
+      "id": "item-2",
+      "type": "userMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "item/completed",
+    "params": {
+     "completedAtMs": 1700000000001,
+     "item": {
+      "id": "item-3",
+      "phase": "final_answer",
+      "text": "steered answer",
+      "type": "agentMessage"
+     },
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "completed"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/start",
+    "params": {
+     "input": [
+      {
+       "text": "wait",
+       "type": "text"
+      }
+     ],
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "turn/interrupt",
+    "params": {
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   }
+  ],
+  "name": "interrupt",
+  "note": "turn('wait') then interrupt() then run()",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "turn/started",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": null,
+       "durationMs": null,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "inProgress"
+      }
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "method": "item/started",
+     "params": {
+      "item": {
+       "id": "item-1",
+       "phase": "commentary",
+       "text": "",
+       "type": "agentMessage"
+      },
+      "startedAtMs": 1700000000000,
+      "threadId": "thread-1",
+      "turnId": "turn-1"
+     }
+    },
+    "response": false
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {}
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "method": "turn/completed",
+     "params": {
+      "threadId": "thread-1",
+      "turn": {
+       "completedAt": 1700000002,
+       "durationMs": 1500,
+       "error": null,
+       "id": "turn-1",
+       "items": [],
+       "startedAt": 1700000000,
+       "status": "interrupted"
+      }
+     }
+    },
+    "response": false
+   }
+  ],
+  "results": [
+   {
+    "label": "interrupt",
+    "value": {}
+   },
+   {
+    "label": "result",
+    "value": {
+     "completed_at": 1700000002,
+     "duration_ms": 1500,
+     "error": null,
+     "final_response": null,
+     "id": "turn-1",
+     "item_ids": [],
+     "item_types": [],
+     "items_count": 0,
+     "started_at": 1700000000,
+     "status": "interrupted",
+     "usage": null
+    }
+   }
+  ],
+  "server": [
+   {
+    "id": "91ce6b31-a7cb-4159-81ab-b6ff3b0059ed",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "155db768-0420-4f70-9e50-abc971a27a0d",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "8bba21ef-4cb8-45ab-95e8-09f63a08b7df",
+    "result": {
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "turn/started",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": null,
+      "durationMs": null,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "inProgress"
+     }
+    }
+   },
+   {
+    "method": "item/started",
+    "params": {
+     "item": {
+      "id": "item-1",
+      "phase": "commentary",
+      "text": "",
+      "type": "agentMessage"
+     },
+     "startedAtMs": 1700000000000,
+     "threadId": "thread-1",
+     "turnId": "turn-1"
+    }
+   },
+   {
+    "id": "59297e3a-fcb4-4dd9-b776-0b2d54fa956b",
+    "result": {}
+   },
+   {
+    "method": "turn/completed",
+    "params": {
+     "threadId": "thread-1",
+     "turn": {
+      "completedAt": 1700000002,
+      "durationMs": 1500,
+      "error": null,
+      "id": "turn-1",
+      "items": [],
+      "startedAt": 1700000000,
+      "status": "interrupted"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/resume",
+    "params": {
+     "threadId": "thread-x"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/resume",
+    "params": {
+     "approvalPolicy": "never",
+     "baseInstructions": "b",
+     "cwd": "/repo",
+     "developerInstructions": "d",
+     "excludeTurns": true,
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "personality": "none",
+     "sandbox": "danger-full-access",
+     "serviceTier": "fast",
+     "threadId": "thread-x"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/fork",
+    "params": {
+     "threadId": "thread-x"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/fork",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "ephemeral": true,
+     "excludeTurns": false,
+     "model": "gpt-5.5",
+     "sandbox": "read-only",
+     "threadId": "thread-x"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/list",
+    "params": {}
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/list",
+    "params": {
+     "archived": true,
+     "cursor": "c1",
+     "limit": 5,
+     "modelProviders": [
+      "openai"
+     ],
+     "searchTerm": "bug",
+     "sortDirection": "desc",
+     "sortKey": "updated_at",
+     "sourceKinds": [
+      "cli",
+      "appServer"
+     ]
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/archive",
+    "params": {
+     "threadId": "thread-a"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/unarchive",
+    "params": {
+     "threadId": "thread-a"
+    }
+   }
+  ],
+  "name": "lifecycle",
+  "note": "resume / fork / list / archive / unarchive, defaults and options",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "user",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-x",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "approvalPolicy": "never",
+      "approvalsReviewer": "user",
+      "cwd": "/repo",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/repo",
+       "ephemeral": false,
+       "id": "thread-x",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "user",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": true,
+       "id": "thread-2",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "result": {
+      "backwardsCursor": null,
+      "data": [
+       {
+        "cliVersion": "0.166.0",
+        "createdAt": 1700000000,
+        "cwd": "/work",
+        "ephemeral": false,
+        "id": "thread-a",
+        "modelProvider": "openai",
+        "preview": "",
+        "projectId": null,
+        "sessionId": "session-1",
+        "source": "appServer",
+        "status": {
+         "type": "idle"
+        },
+        "turns": [],
+        "updatedAt": 1700000000
+       },
+       {
+        "cliVersion": "0.166.0",
+        "createdAt": 1700000000,
+        "cwd": "/work",
+        "ephemeral": false,
+        "id": "thread-b",
+        "modelProvider": "openai",
+        "preview": "",
+        "projectId": null,
+        "sessionId": "session-1",
+        "source": "appServer",
+        "status": {
+         "type": "idle"
+        },
+        "turns": [],
+        "updatedAt": 1700000000
+       }
+      ],
+      "nextCursor": "cursor-2"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 6,
+    "msg": {
+     "result": {
+      "backwardsCursor": null,
+      "data": [
+       {
+        "cliVersion": "0.166.0",
+        "createdAt": 1700000000,
+        "cwd": "/work",
+        "ephemeral": false,
+        "id": "thread-a",
+        "modelProvider": "openai",
+        "preview": "",
+        "projectId": null,
+        "sessionId": "session-1",
+        "source": "appServer",
+        "status": {
+         "type": "idle"
+        },
+        "turns": [],
+        "updatedAt": 1700000000
+       },
+       {
+        "cliVersion": "0.166.0",
+        "createdAt": 1700000000,
+        "cwd": "/work",
+        "ephemeral": false,
+        "id": "thread-b",
+        "modelProvider": "openai",
+        "preview": "",
+        "projectId": null,
+        "sessionId": "session-1",
+        "source": "appServer",
+        "status": {
+         "type": "idle"
+        },
+        "turns": [],
+        "updatedAt": 1700000000
+       }
+      ],
+      "nextCursor": "cursor-2"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 7,
+    "msg": {
+     "result": {}
+    },
+    "response": true
+   },
+   {
+    "after_request": 8,
+    "msg": {
+     "result": {
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-a",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "resume",
+    "value": "thread-x"
+   },
+   {
+    "label": "resume_options",
+    "value": "thread-x"
+   },
+   {
+    "label": "fork",
+    "value": "thread-1"
+   },
+   {
+    "label": "fork_options",
+    "value": "thread-2"
+   },
+   {
+    "label": "list",
+    "value": {
+     "ids": [
+      "thread-a",
+      "thread-b"
+     ],
+     "next_cursor": "cursor-2"
+    }
+   },
+   {
+    "label": "list_options",
+    "value": "cursor-2"
+   },
+   {
+    "label": "archive",
+    "value": {}
+   },
+   {
+    "label": "unarchive",
+    "value": "thread-a"
+   }
+  ],
+  "server": [
+   {
+    "id": "f107a1c2-b007-434e-b920-a7dbfe12e99e",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "1e2f4fc2-994b-4ddd-99d2-a64a5acaa9c1",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "user",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-x",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "3eb21390-1c4d-4fcb-8691-ea0edd14f314",
+    "result": {
+     "approvalPolicy": "never",
+     "approvalsReviewer": "user",
+     "cwd": "/repo",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/repo",
+      "ephemeral": false,
+      "id": "thread-x",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "f9c39b72-2423-4d7f-813c-7095dcd4c6cd",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "user",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "eab45e23-0ea4-4be9-bb23-63436ac6a015",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": true,
+      "id": "thread-2",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "358d992e-3dec-4951-b4db-63f102574c7a",
+    "result": {
+     "backwardsCursor": null,
+     "data": [
+      {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-a",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      },
+      {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-b",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     ],
+     "nextCursor": "cursor-2"
+    }
+   },
+   {
+    "id": "f27c5326-b46b-4f8b-af64-bcefea394124",
+    "result": {
+     "backwardsCursor": null,
+     "data": [
+      {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-a",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      },
+      {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-b",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     ],
+     "nextCursor": "cursor-2"
+    }
+   },
+   {
+    "id": "765eb3ce-5a5c-43f0-8bcc-5d06289b998f",
+    "result": {}
+   },
+   {
+    "id": "d1e87613-8301-44f5-832a-6ca8787b010a",
+    "result": {
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-a",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/start",
+    "params": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/read",
+    "params": {
+     "includeTurns": false,
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/read",
+    "params": {
+     "includeTurns": true,
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/name/set",
+    "params": {
+     "name": "Golden",
+     "threadId": "thread-1"
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "thread/compact/start",
+    "params": {
+     "threadId": "thread-1"
+    }
+   }
+  ],
+  "name": "thread_ops",
+  "note": "thread.read / read(include_turns) / set_name / compact",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "approvalPolicy": "on-request",
+      "approvalsReviewer": "auto_review",
+      "cwd": "/work",
+      "model": "gpt-5.5",
+      "modelProvider": "openai",
+      "sandbox": {
+       "excludeSlashTmp": false,
+       "excludeTmpdirEnvVar": false,
+       "networkAccess": false,
+       "type": "workspaceWrite",
+       "writableRoots": []
+      },
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 3,
+    "msg": {
+     "result": {
+      "thread": {
+       "cliVersion": "0.166.0",
+       "createdAt": 1700000000,
+       "cwd": "/work",
+       "ephemeral": false,
+       "id": "thread-1",
+       "modelProvider": "openai",
+       "preview": "",
+       "projectId": null,
+       "sessionId": "session-1",
+       "source": "appServer",
+       "status": {
+        "type": "idle"
+       },
+       "turns": [],
+       "updatedAt": 1700000000
+      }
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 4,
+    "msg": {
+     "result": {}
+    },
+    "response": true
+   },
+   {
+    "after_request": 5,
+    "msg": {
+     "result": {}
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "read",
+    "value": "thread-1"
+   },
+   {
+    "label": "read_turns",
+    "value": "thread-1"
+   },
+   {
+    "label": "set_name",
+    "value": {}
+   },
+   {
+    "label": "compact",
+    "value": {}
+   }
+  ],
+  "server": [
+   {
+    "id": "f1254d73-53c4-47cb-9cc4-ea712d101806",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "6dd1c0cc-46f1-48ea-9368-b62e507cd41e",
+    "result": {
+     "approvalPolicy": "on-request",
+     "approvalsReviewer": "auto_review",
+     "cwd": "/work",
+     "model": "gpt-5.5",
+     "modelProvider": "openai",
+     "sandbox": {
+      "excludeSlashTmp": false,
+      "excludeTmpdirEnvVar": false,
+      "networkAccess": false,
+      "type": "workspaceWrite",
+      "writableRoots": []
+     },
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "346ed1e7-85ea-43da-a1a4-dfb3becf2906",
+    "result": {
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "79d77ad1-2df4-448e-9a1f-20808c73dd10",
+    "result": {
+     "thread": {
+      "cliVersion": "0.166.0",
+      "createdAt": 1700000000,
+      "cwd": "/work",
+      "ephemeral": false,
+      "id": "thread-1",
+      "modelProvider": "openai",
+      "preview": "",
+      "projectId": null,
+      "sessionId": "session-1",
+      "source": "appServer",
+      "status": {
+       "type": "idle"
+      },
+      "turns": [],
+      "updatedAt": 1700000000
+     }
+    }
+   },
+   {
+    "id": "71aeebe2-2d61-4623-a49d-c30021fafc9d",
+    "result": {}
+   },
+   {
+    "id": "95a30218-e758-4339-af27-0025fd50a90f",
+    "result": {}
+   }
+  ]
+ },
+ {
+  "client": [
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "initialize",
+    "params": {
+     "capabilities": {
+      "experimentalApi": true
+     },
+     "clientInfo": {
+      "name": "codex_python_sdk",
+      "title": "Codex Python SDK",
+      "version": "0.0.0.dev0"
+     }
+    }
+   },
+   {
+    "keys": [
+     "method"
+    ],
+    "kind": "notification",
+    "method": "initialized",
+    "params": null
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "model/list",
+    "params": {
+     "includeHidden": false
+    }
+   },
+   {
+    "keys": [
+     "id",
+     "method",
+     "params"
+    ],
+    "kind": "request",
+    "method": "model/list",
+    "params": {
+     "includeHidden": true
+    }
+   }
+  ],
+  "name": "models",
+  "note": "models() and models(include_hidden=True)",
+  "replay": [
+   {
+    "after_request": 0,
+    "msg": {
+     "result": {
+      "platformFamily": "unix",
+      "platformOs": "linux",
+      "serverInfo": {
+       "name": "codex-app-server",
+       "version": "0.166.0"
+      },
+      "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 1,
+    "msg": {
+     "result": {
+      "data": [
+       {
+        "defaultReasoningEffort": "medium",
+        "description": "Frontier",
+        "displayName": "GPT-5.5",
+        "hidden": false,
+        "id": "gpt-5.5",
+        "inputModalities": [
+         "text",
+         "image"
+        ],
+        "isDefault": true,
+        "model": "gpt-5.5",
+        "supportedReasoningEfforts": [
+         {
+          "description": "fast",
+          "reasoningEffort": "low"
+         },
+         {
+          "description": "deep",
+          "reasoningEffort": "high"
+         }
+        ]
+       }
+      ],
+      "nextCursor": null
+     }
+    },
+    "response": true
+   },
+   {
+    "after_request": 2,
+    "msg": {
+     "result": {
+      "data": [
+       {
+        "defaultReasoningEffort": "medium",
+        "description": "Frontier",
+        "displayName": "GPT-5.5",
+        "hidden": false,
+        "id": "gpt-5.5",
+        "inputModalities": [
+         "text",
+         "image"
+        ],
+        "isDefault": true,
+        "model": "gpt-5.5",
+        "supportedReasoningEfforts": [
+         {
+          "description": "fast",
+          "reasoningEffort": "low"
+         },
+         {
+          "description": "deep",
+          "reasoningEffort": "high"
+         }
+        ]
+       }
+      ],
+      "nextCursor": null
+     }
+    },
+    "response": true
+   }
+  ],
+  "results": [
+   {
+    "label": "models",
+    "value": [
+     "gpt-5.5"
+    ]
+   },
+   {
+    "label": "models_hidden",
+    "value": [
+     "gpt-5.5"
+    ]
+   }
+  ],
+  "server": [
+   {
+    "id": "ba229578-82ee-4cdc-92ae-c9aa8f68e093",
+    "result": {
+     "platformFamily": "unix",
+     "platformOs": "linux",
+     "serverInfo": {
+      "name": "codex-app-server",
+      "version": "0.166.0"
+     },
+     "userAgent": "codex_cli_rs/0.166.0 (Linux; x86_64)"
+    }
+   },
+   {
+    "id": "7b4649a7-84b2-422b-b8ca-258c196b4ae0",
+    "result": {
+     "data": [
+      {
+       "defaultReasoningEffort": "medium",
+       "description": "Frontier",
+       "displayName": "GPT-5.5",
+       "hidden": false,
+       "id": "gpt-5.5",
+       "inputModalities": [
+        "text",
+        "image"
+       ],
+       "isDefault": true,
+       "model": "gpt-5.5",
+       "supportedReasoningEfforts": [
+        {
+         "description": "fast",
+         "reasoningEffort": "low"
+        },
+        {
+         "description": "deep",
+         "reasoningEffort": "high"
+        }
+       ]
+      }
+     ],
+     "nextCursor": null
+    }
+   },
+   {
+    "id": "73d3a9c4-9e7b-4160-ac7c-0d934d300cf1",
+    "result": {
+     "data": [
+      {
+       "defaultReasoningEffort": "medium",
+       "description": "Frontier",
+       "displayName": "GPT-5.5",
+       "hidden": false,
+       "id": "gpt-5.5",
+       "inputModalities": [
+        "text",
+        "image"
+       ],
+       "isDefault": true,
+       "model": "gpt-5.5",
+       "supportedReasoningEfforts": [
+        {
+         "description": "fast",
+         "reasoningEffort": "low"
+        },
+        {
+         "description": "deep",
+         "reasoningEffort": "high"
+        }
+       ]
+      }
+     ],
+     "nextCursor": null
+    }
+   }
+  ]
+ }
+]

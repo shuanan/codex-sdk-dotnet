@@ -179,6 +179,7 @@ internal sealed partial class CodexAppServerThreadsClient
                 AttachedToThreadId = options.AttachedToThreadId,
                 Cursor = options.Cursor,
                 SortKey = options.SortKey,
+                SortDirection = options.SortDirection, UseStateDbOnly = options.UseStateDbOnly,
             },
             ct);
 
