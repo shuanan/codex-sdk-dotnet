@@ -97,4 +97,14 @@ public sealed class ThreadListOptions
     /// Gets or sets an optional sort key, if supported upstream (for example, <c>created_at</c> or <c>updated_at</c>).
     /// </summary>
     public string? SortKey { get; set; }
+
+    /// <summary>
+    /// Gets or sets an optional sort direction (<c>asc</c> or <c>desc</c>).
+    /// </summary>
+    public string? SortDirection { get; set; }
+
+    /// <summary>
+    /// Gets or sets whether listing should read only the state database, skipping rollout scans.
+    /// </summary>
+    public bool? UseStateDbOnly { get; set; }
 }

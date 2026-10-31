@@ -59,6 +59,7 @@ Full docs, examples, and API reference live in [`docs/`](docs/README.md):
 
 - [Exec mode](docs/exec.md) — sessions, streaming events, structured outputs, code reviews
 - [App Server](docs/AppServer/README.md) — threads, turns, approvals, DI, resiliency
+- [Python-SDK-style API](docs/HighLevel/README.md) — `Codex`, threads, turns, results like `openai-codex`
 - [MCP Server](docs/McpServer/README.md) — tool discovery, sessions, follow-ups
 - [Semantic Kernel package](docs/SemanticKernel.md)
 - [Microsoft Agent Framework package](docs/AgentFramework.md)
@@ -87,3 +88,17 @@ Console.WriteLine(result.FinalResponse);
 Collected results, streaming subscriptions, trust-labelled external messages,
 optional pinned runtimes, preflight, middleware, and OpenTelemetry instrumentation
 are described in the [high-level SDK guide](https://github.com/JKamsker/JKToolKit.CodexSDK/blob/master/docs/high-level-sdk.md).
+
+## Python-SDK-style API
+
+`Codex` mirrors OpenAI's official Python SDK (`openai-codex`) surface in async C#:
+
+```csharp
+await using var codex = await Codex.StartAsync();
+var thread = await codex.ThreadStartAsync();
+var result = await thread.RunAsync("Explain this repository in three bullets.");
+Console.WriteLine(result.FinalResponse);
+```
+
+Login, streaming, steering, options, the Python → C# mapping, and the verified wire
+differences are in the [Python-style API guide](docs/HighLevel/README.md).

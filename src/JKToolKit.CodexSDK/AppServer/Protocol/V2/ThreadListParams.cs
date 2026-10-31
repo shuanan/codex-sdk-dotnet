@@ -86,4 +86,16 @@ public sealed record class ThreadListParams
     /// </summary>
     [JsonPropertyName("sortKey")]
     public string? SortKey { get; init; }
+
+    /// <summary>
+    /// Gets an optional sort direction.
+    /// </summary>
+    [JsonPropertyName("sortDirection")]
+    public string? SortDirection { get; init; }
+
+    /// <summary>
+    /// Gets whether listing should read only the state database.
+    /// </summary>
+    [JsonPropertyName("useStateDbOnly")]
+    public bool? UseStateDbOnly { get; init; }
 }

@@ -98,3 +98,212 @@ static JKToolKit.CodexSDK.CodexSdk.StartAsync(System.Action<JKToolKit.CodexSDK.F
 static JKToolKit.CodexSDK.Diagnostics.CodexTelemetry.ActivitySource.get -> System.Diagnostics.ActivitySource!
 static JKToolKit.CodexSDK.Diagnostics.CodexTelemetry.Meter.get -> System.Diagnostics.Metrics.Meter!
 static JKToolKit.CodexSDK.Facade.CodexRuntime.ExpectedVersion.get -> string!
+JKToolKit.CodexSDK.Codex
+JKToolKit.CodexSDK.Codex.AccountAsync(bool refreshToken = false, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.AccountReadResult!>!
+JKToolKit.CodexSDK.Codex.Client.get -> JKToolKit.CodexSDK.AppServer.CodexAppServerClient!
+JKToolKit.CodexSDK.Codex.DisposeAsync() -> System.Threading.Tasks.ValueTask
+JKToolKit.CodexSDK.Codex.LoginApiKeyAsync(string! apiKey, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+JKToolKit.CodexSDK.Codex.LoginChatgptAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexChatgptLogin!>!
+JKToolKit.CodexSDK.Codex.LoginChatgptDeviceCodeAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexDeviceCodeLogin!>!
+JKToolKit.CodexSDK.Codex.LogoutAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+JKToolKit.CodexSDK.Codex.Metadata.get -> JKToolKit.CodexSDK.AppServer.AppServerInitializeResult!
+JKToolKit.CodexSDK.Codex.ModelsAsync(bool includeHidden = false, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.ModelListResult!>!
+JKToolKit.CodexSDK.Codex.Thread(string! threadId) -> JKToolKit.CodexSDK.CodexConversation!
+JKToolKit.CodexSDK.Codex.ThreadArchiveAsync(string! threadId, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.ThreadArchiveResult!>!
+JKToolKit.CodexSDK.Codex.ThreadForkAsync(string! threadId, JKToolKit.CodexSDK.CodexThreadForkOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexConversation!>!
+JKToolKit.CodexSDK.Codex.ThreadListAsync(JKToolKit.CodexSDK.AppServer.ThreadListOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.CodexThreadListPage!>!
+JKToolKit.CodexSDK.Codex.ThreadResumeAsync(string! threadId, JKToolKit.CodexSDK.CodexThreadResumeOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexConversation!>!
+JKToolKit.CodexSDK.Codex.ThreadStartAsync(JKToolKit.CodexSDK.CodexThreadStartOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexConversation!>!
+JKToolKit.CodexSDK.Codex.ThreadUnarchiveAsync(string! threadId, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexConversation!>!
+JKToolKit.CodexSDK.CodexApprovalMode
+JKToolKit.CodexSDK.CodexApprovalMode.AutoReview = 1 -> JKToolKit.CodexSDK.CodexApprovalMode
+JKToolKit.CodexSDK.CodexApprovalMode.DenyAll = 0 -> JKToolKit.CodexSDK.CodexApprovalMode
+JKToolKit.CodexSDK.CodexChatgptLogin
+JKToolKit.CodexSDK.CodexChatgptLogin.AuthUrl.get -> string!
+JKToolKit.CodexSDK.CodexChatgptLogin.CancelAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.AccountLoginCancelResult!>!
+JKToolKit.CodexSDK.CodexChatgptLogin.LoginId.get -> string!
+JKToolKit.CodexSDK.CodexChatgptLogin.WaitAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.Notifications.V2AdditionalNotifications.AccountLoginCompletedNotification!>!
+JKToolKit.CodexSDK.CodexConfig
+JKToolKit.CodexSDK.CodexConfig.ApprovalHandler.get -> JKToolKit.CodexSDK.AppServer.IAppServerApprovalHandler?
+JKToolKit.CodexSDK.CodexConfig.ApprovalHandler.init -> void
+JKToolKit.CodexSDK.CodexConfig.ClientName.get -> string!
+JKToolKit.CodexSDK.CodexConfig.ClientName.init -> void
+JKToolKit.CodexSDK.CodexConfig.ClientTitle.get -> string!
+JKToolKit.CodexSDK.CodexConfig.ClientTitle.init -> void
+JKToolKit.CodexSDK.CodexConfig.ClientVersion.get -> string!
+JKToolKit.CodexSDK.CodexConfig.ClientVersion.init -> void
+JKToolKit.CodexSDK.CodexConfig.CodexBin.get -> string?
+JKToolKit.CodexSDK.CodexConfig.CodexBin.init -> void
+JKToolKit.CodexSDK.CodexConfig.ConfigOverrides.get -> System.Collections.Generic.IReadOnlyList<string!>!
+JKToolKit.CodexSDK.CodexConfig.ConfigOverrides.init -> void
+JKToolKit.CodexSDK.CodexConfig.ConfigureClient.get -> System.Action<JKToolKit.CodexSDK.AppServer.CodexAppServerClientOptions!>?
+JKToolKit.CodexSDK.CodexConfig.ConfigureClient.init -> void
+JKToolKit.CodexSDK.CodexConfig.Cwd.get -> string?
+JKToolKit.CodexSDK.CodexConfig.Cwd.init -> void
+JKToolKit.CodexSDK.CodexConfig.Env.get -> System.Collections.Generic.IReadOnlyDictionary<string!, string!>?
+JKToolKit.CodexSDK.CodexConfig.Env.init -> void
+JKToolKit.CodexSDK.CodexConfig.ExperimentalApi.get -> bool
+JKToolKit.CodexSDK.CodexConfig.ExperimentalApi.init -> void
+JKToolKit.CodexSDK.CodexConfig.LaunchArgsOverride.get -> System.Collections.Generic.IReadOnlyList<string!>?
+JKToolKit.CodexSDK.CodexConfig.LaunchArgsOverride.init -> void
+JKToolKit.CodexSDK.CodexConversation
+JKToolKit.CodexSDK.CodexConversation.CompactAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+JKToolKit.CodexSDK.CodexConversation.Id.get -> string!
+JKToolKit.CodexSDK.CodexConversation.ReadAsync(bool includeTurns = false, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.CodexThreadReadResult!>!
+JKToolKit.CodexSDK.CodexConversation.RunAsync(JKToolKit.CodexSDK.CodexRunInput! input, JKToolKit.CodexSDK.CodexTurnOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexRunResult!>!
+JKToolKit.CodexSDK.CodexConversation.SetNameAsync(string! name, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+JKToolKit.CodexSDK.CodexConversation.TurnAsync(JKToolKit.CodexSDK.CodexRunInput! input, JKToolKit.CodexSDK.CodexTurnOptions? options = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexConversationTurn!>!
+JKToolKit.CodexSDK.CodexConversationTurn
+JKToolKit.CodexSDK.CodexConversationTurn.DisposeAsync() -> System.Threading.Tasks.ValueTask
+JKToolKit.CodexSDK.CodexConversationTurn.Handle.get -> JKToolKit.CodexSDK.AppServer.CodexTurnHandle!
+JKToolKit.CodexSDK.CodexConversationTurn.Id.get -> string!
+JKToolKit.CodexSDK.CodexConversationTurn.InterruptAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+JKToolKit.CodexSDK.CodexConversationTurn.RunAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.CodexRunResult!>!
+JKToolKit.CodexSDK.CodexConversationTurn.SteerAsync(JKToolKit.CodexSDK.CodexRunInput! input, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<string!>!
+JKToolKit.CodexSDK.CodexConversationTurn.StreamAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<JKToolKit.CodexSDK.AppServer.Notifications.AppServerNotification!>!
+JKToolKit.CodexSDK.CodexConversationTurn.ThreadId.get -> string!
+JKToolKit.CodexSDK.CodexDeviceCodeLogin
+JKToolKit.CodexSDK.CodexDeviceCodeLogin.CancelAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.AccountLoginCancelResult!>!
+JKToolKit.CodexSDK.CodexDeviceCodeLogin.LoginId.get -> string!
+JKToolKit.CodexSDK.CodexDeviceCodeLogin.UserCode.get -> string!
+JKToolKit.CodexSDK.CodexDeviceCodeLogin.VerificationUrl.get -> string!
+JKToolKit.CodexSDK.CodexDeviceCodeLogin.WaitAsync(System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.AppServer.Notifications.V2AdditionalNotifications.AccountLoginCompletedNotification!>!
+JKToolKit.CodexSDK.CodexRunInput
+JKToolKit.CodexSDK.CodexRunInput.Items.get -> System.Collections.Generic.IReadOnlyList<JKToolKit.CodexSDK.AppServer.TurnInputItem!>!
+JKToolKit.CodexSDK.CodexRunInput.ToolOutput.get -> JKToolKit.CodexSDK.AppServer.TurnToolOutput?
+JKToolKit.CodexSDK.CodexRunResult
+JKToolKit.CodexSDK.CodexRunResult.CompletedAt.get -> long?
+JKToolKit.CodexSDK.CodexRunResult.CompletedAt.init -> void
+JKToolKit.CodexSDK.CodexRunResult.DurationMs.get -> long?
+JKToolKit.CodexSDK.CodexRunResult.DurationMs.init -> void
+JKToolKit.CodexSDK.CodexRunResult.Error.get -> JKToolKit.CodexSDK.AppServer.ThreadRead.CodexTurnError?
+JKToolKit.CodexSDK.CodexRunResult.Error.init -> void
+JKToolKit.CodexSDK.CodexRunResult.FinalResponse.get -> string?
+JKToolKit.CodexSDK.CodexRunResult.FinalResponse.init -> void
+JKToolKit.CodexSDK.CodexRunResult.Id.get -> string!
+JKToolKit.CodexSDK.CodexRunResult.Id.init -> void
+JKToolKit.CodexSDK.CodexRunResult.Items.get -> System.Collections.Generic.IReadOnlyList<JKToolKit.CodexSDK.AppServer.ThreadRead.CodexThreadItem!>!
+JKToolKit.CodexSDK.CodexRunResult.Items.init -> void
+JKToolKit.CodexSDK.CodexRunResult.StartedAt.get -> long?
+JKToolKit.CodexSDK.CodexRunResult.StartedAt.init -> void
+JKToolKit.CodexSDK.CodexRunResult.Status.get -> string?
+JKToolKit.CodexSDK.CodexRunResult.Status.init -> void
+JKToolKit.CodexSDK.CodexRunResult.ThreadId.get -> string!
+JKToolKit.CodexSDK.CodexRunResult.ThreadId.init -> void
+JKToolKit.CodexSDK.CodexRunResult.Turn.get -> JKToolKit.CodexSDK.AppServer.CodexTurnResult!
+JKToolKit.CodexSDK.CodexRunResult.Turn.init -> void
+JKToolKit.CodexSDK.CodexRunResult.Usage.get -> JKToolKit.CodexSDK.AppServer.CodexTurnUsage?
+JKToolKit.CodexSDK.CodexRunResult.Usage.init -> void
+JKToolKit.CodexSDK.CodexSandbox
+JKToolKit.CodexSDK.CodexSandbox.FullAccess = 2 -> JKToolKit.CodexSDK.CodexSandbox
+JKToolKit.CodexSDK.CodexSandbox.ReadOnly = 0 -> JKToolKit.CodexSDK.CodexSandbox
+JKToolKit.CodexSDK.CodexSandbox.WorkspaceWrite = 1 -> JKToolKit.CodexSDK.CodexSandbox
+JKToolKit.CodexSDK.CodexThreadForkOptions
+JKToolKit.CodexSDK.CodexThreadForkOptions.ApprovalMode.get -> JKToolKit.CodexSDK.CodexApprovalMode?
+JKToolKit.CodexSDK.CodexThreadForkOptions.ApprovalMode.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.BaseInstructions.get -> string?
+JKToolKit.CodexSDK.CodexThreadForkOptions.BaseInstructions.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.Config.get -> System.Text.Json.JsonElement?
+JKToolKit.CodexSDK.CodexThreadForkOptions.Config.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.Cwd.get -> string?
+JKToolKit.CodexSDK.CodexThreadForkOptions.Cwd.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.DeveloperInstructions.get -> string?
+JKToolKit.CodexSDK.CodexThreadForkOptions.DeveloperInstructions.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.Ephemeral.get -> bool?
+JKToolKit.CodexSDK.CodexThreadForkOptions.Ephemeral.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.IncludeTurns.get -> bool?
+JKToolKit.CodexSDK.CodexThreadForkOptions.IncludeTurns.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.Model.get -> JKToolKit.CodexSDK.Models.CodexModel?
+JKToolKit.CodexSDK.CodexThreadForkOptions.Model.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.ModelProvider.get -> string?
+JKToolKit.CodexSDK.CodexThreadForkOptions.ModelProvider.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.Sandbox.get -> JKToolKit.CodexSDK.CodexSandbox?
+JKToolKit.CodexSDK.CodexThreadForkOptions.Sandbox.init -> void
+JKToolKit.CodexSDK.CodexThreadForkOptions.ServiceTier.get -> JKToolKit.CodexSDK.Models.CodexServiceTier?
+JKToolKit.CodexSDK.CodexThreadForkOptions.ServiceTier.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions
+JKToolKit.CodexSDK.CodexThreadResumeOptions.ApprovalMode.get -> JKToolKit.CodexSDK.CodexApprovalMode?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.ApprovalMode.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.BaseInstructions.get -> string?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.BaseInstructions.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Config.get -> System.Text.Json.JsonElement?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Config.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Cwd.get -> string?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Cwd.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.DeveloperInstructions.get -> string?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.DeveloperInstructions.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.IncludeTurns.get -> bool?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.IncludeTurns.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Model.get -> JKToolKit.CodexSDK.Models.CodexModel?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Model.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.ModelProvider.get -> string?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.ModelProvider.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Personality.get -> string?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Personality.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Sandbox.get -> JKToolKit.CodexSDK.CodexSandbox?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.Sandbox.init -> void
+JKToolKit.CodexSDK.CodexThreadResumeOptions.ServiceTier.get -> JKToolKit.CodexSDK.Models.CodexServiceTier?
+JKToolKit.CodexSDK.CodexThreadResumeOptions.ServiceTier.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions
+JKToolKit.CodexSDK.CodexThreadStartOptions.ApprovalMode.get -> JKToolKit.CodexSDK.CodexApprovalMode
+JKToolKit.CodexSDK.CodexThreadStartOptions.ApprovalMode.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.BaseInstructions.get -> string?
+JKToolKit.CodexSDK.CodexThreadStartOptions.BaseInstructions.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.Config.get -> System.Text.Json.JsonElement?
+JKToolKit.CodexSDK.CodexThreadStartOptions.Config.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.Cwd.get -> string?
+JKToolKit.CodexSDK.CodexThreadStartOptions.Cwd.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.DeveloperInstructions.get -> string?
+JKToolKit.CodexSDK.CodexThreadStartOptions.DeveloperInstructions.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.Ephemeral.get -> bool?
+JKToolKit.CodexSDK.CodexThreadStartOptions.Ephemeral.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.Model.get -> JKToolKit.CodexSDK.Models.CodexModel?
+JKToolKit.CodexSDK.CodexThreadStartOptions.Model.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.ModelProvider.get -> string?
+JKToolKit.CodexSDK.CodexThreadStartOptions.ModelProvider.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.Personality.get -> string?
+JKToolKit.CodexSDK.CodexThreadStartOptions.Personality.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.Sandbox.get -> JKToolKit.CodexSDK.CodexSandbox?
+JKToolKit.CodexSDK.CodexThreadStartOptions.Sandbox.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.ServiceName.get -> string?
+JKToolKit.CodexSDK.CodexThreadStartOptions.ServiceName.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.ServiceTier.get -> JKToolKit.CodexSDK.Models.CodexServiceTier?
+JKToolKit.CodexSDK.CodexThreadStartOptions.ServiceTier.init -> void
+JKToolKit.CodexSDK.CodexThreadStartOptions.SessionStartSource.get -> JKToolKit.CodexSDK.AppServer.ThreadSessionStartSource?
+JKToolKit.CodexSDK.CodexThreadStartOptions.SessionStartSource.init -> void
+JKToolKit.CodexSDK.CodexTurnFailedException
+JKToolKit.CodexSDK.CodexTurnFailedException.CodexTurnFailedException(JKToolKit.CodexSDK.CodexRunResult! result) -> void
+JKToolKit.CodexSDK.CodexTurnFailedException.Result.get -> JKToolKit.CodexSDK.CodexRunResult!
+JKToolKit.CodexSDK.CodexTurnOptions
+JKToolKit.CodexSDK.CodexTurnOptions.ApprovalMode.get -> JKToolKit.CodexSDK.CodexApprovalMode?
+JKToolKit.CodexSDK.CodexTurnOptions.ApprovalMode.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Cwd.get -> string?
+JKToolKit.CodexSDK.CodexTurnOptions.Cwd.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Effort.get -> JKToolKit.CodexSDK.Models.CodexReasoningEffort?
+JKToolKit.CodexSDK.CodexTurnOptions.Effort.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Model.get -> JKToolKit.CodexSDK.Models.CodexModel?
+JKToolKit.CodexSDK.CodexTurnOptions.Model.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.OutputSchema.get -> System.Text.Json.JsonElement?
+JKToolKit.CodexSDK.CodexTurnOptions.OutputSchema.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Personality.get -> string?
+JKToolKit.CodexSDK.CodexTurnOptions.Personality.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Sandbox.get -> JKToolKit.CodexSDK.CodexSandbox?
+JKToolKit.CodexSDK.CodexTurnOptions.Sandbox.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.ServiceTier.get -> JKToolKit.CodexSDK.Models.CodexServiceTier?
+JKToolKit.CodexSDK.CodexTurnOptions.ServiceTier.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Source.get -> string?
+JKToolKit.CodexSDK.CodexTurnOptions.Source.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.Summary.get -> string?
+JKToolKit.CodexSDK.CodexTurnOptions.Summary.init -> void
+JKToolKit.CodexSDK.CodexTurnOptions.TurnServiceTier.get -> JKToolKit.CodexSDK.Models.CodexServiceTier?
+JKToolKit.CodexSDK.CodexTurnOptions.TurnServiceTier.init -> void
+static JKToolKit.CodexSDK.Codex.StartAsync(JKToolKit.CodexSDK.CodexConfig? config = null, System.Threading.CancellationToken ct = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<JKToolKit.CodexSDK.Codex!>!
+static JKToolKit.CodexSDK.CodexRunInput.ExternalMessage(string! toolName, string! content, string? namespace = null) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.ExternalMessage(string! toolName, System.Text.Json.JsonElement content, string? namespace = null) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.FromItems(params System.Collections.Generic.IReadOnlyList<JKToolKit.CodexSDK.AppServer.TurnInputItem!>! items) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.implicit operator JKToolKit.CodexSDK.CodexRunInput!(JKToolKit.CodexSDK.AppServer.TurnInputItem! item) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.implicit operator JKToolKit.CodexSDK.CodexRunInput!(JKToolKit.CodexSDK.AppServer.TurnInputItem![]! items) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.implicit operator JKToolKit.CodexSDK.CodexRunInput!(JKToolKit.CodexSDK.CodexInput! input) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.implicit operator JKToolKit.CodexSDK.CodexRunInput!(string! text) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.implicit operator JKToolKit.CodexSDK.CodexRunInput!(System.Collections.Generic.List<JKToolKit.CodexSDK.AppServer.TurnInputItem!>! items) -> JKToolKit.CodexSDK.CodexRunInput!
+static JKToolKit.CodexSDK.CodexRunInput.Text(string! text) -> JKToolKit.CodexSDK.CodexRunInput!
