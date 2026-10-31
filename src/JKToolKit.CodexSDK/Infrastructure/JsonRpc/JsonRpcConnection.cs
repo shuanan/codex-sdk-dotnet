@@ -24,6 +24,17 @@ internal sealed partial class JsonRpcConnection : IJsonRpcConnection
 
     private readonly Channel<JsonRpcNotification> _notifications;
 
+    // Notification handlers run one at a time, in wire order, on a dedicated dispatcher loop so a
+    // slow handler never blocks the read loop (responses and server requests keep flowing).
+    private readonly Channel<(Func<JsonRpcNotification, ValueTask> Handler, JsonRpcNotification Notification)> _notificationDispatch =
+        Channel.CreateUnbounded<(Func<JsonRpcNotification, ValueTask>, JsonRpcNotification)>(new UnboundedChannelOptions
+        {
+            SingleReader = true,
+            SingleWriter = true
+        });
+    private readonly Task _notificationDispatchLoop;
+    private static readonly AsyncLocal<bool> InNotificationDispatch = new();
+
     public bool IncludeJsonRpcHeader { get; }
 
     public event Func<JsonRpcNotification, ValueTask>? OnNotification;
@@ -65,6 +76,7 @@ internal sealed partial class JsonRpcConnection : IJsonRpcConnection
             FullMode = BoundedChannelFullMode.DropOldest
         });
 
+        _notificationDispatchLoop = Task.Run(NotificationDispatchLoopAsync);
         _readLoop = Task.Run(ReadLoopAsync);
     }
 
@@ -155,10 +167,41 @@ internal sealed partial class JsonRpcConnection : IJsonRpcConnection
         }
 
         _notifications.Writer.TryComplete();
+        _notificationDispatch.Writer.TryComplete();
 
         foreach (var (_, tcs) in _pending)
         {
             tcs.TrySetCanceled();
+        }
+
+        // Let already-received notifications drain. Skip when disposed from inside a handler,
+        // which would otherwise wait on itself.
+        if (!InNotificationDispatch.Value)
+        {
+            try
+            {
+                await _notificationDispatchLoop.ConfigureAwait(false);
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+    }
+
+    private async Task NotificationDispatchLoopAsync()
+    {
+        InNotificationDispatch.Value = true;
+        await foreach (var (handler, notification) in _notificationDispatch.Reader.ReadAllAsync(CancellationToken.None).ConfigureAwait(false))
+        {
+            try
+            {
+                await handler(notification).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogTrace(ex, "JSON-RPC notification handler threw.");
+            }
         }
     }
 
@@ -242,6 +285,7 @@ internal sealed partial class JsonRpcConnection : IJsonRpcConnection
         finally
         {
             _notifications.Writer.TryComplete(_fault);
+            _notificationDispatch.Writer.TryComplete();
         }
     }
 
@@ -326,17 +370,7 @@ internal sealed partial class JsonRpcConnection : IJsonRpcConnection
         var handler = OnNotification;
         if (handler is not null)
         {
-            _ = Task.Run(async () =>
-            {
-                try
-                {
-                    await handler(notification).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogTrace(ex, "JSON-RPC notification handler threw.");
-                }
-            }, CancellationToken.None);
+            _notificationDispatch.Writer.TryWrite((handler, notification));
         }
     }
 

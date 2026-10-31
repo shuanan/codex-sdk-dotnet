@@ -4,6 +4,7 @@ using JKToolKit.CodexSDK.Abstractions;
 using JKToolKit.CodexSDK.Exec;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Win32.SafeHandles;
 
 namespace JKToolKit.CodexSDK.Infrastructure;
 
@@ -77,6 +78,8 @@ public sealed class JsonlTailer : IJsonlTailer
         // Open the file with shared read/write access to allow concurrent writing.
         // Include FileShare.Delete so log rotation (rename/replace) doesn't fail on Windows.
         FileStream? fileStream = null;
+        // Second handle on the same file, used only to tell a replaced path from a growing one.
+        SafeFileHandle? identityHandle = null;
         StreamReader? reader = null;
 
         var pollInterval = _options.TailPollInterval;
@@ -91,6 +94,8 @@ public sealed class JsonlTailer : IJsonlTailer
             {
                 reader?.Dispose();
                 fileStream?.Dispose();
+                identityHandle?.Dispose();
+                identityHandle = null;
 
                 fileStream = new FileStream(
                     filePath,
@@ -99,6 +104,15 @@ public sealed class JsonlTailer : IJsonlTailer
                     FileShare.ReadWrite | FileShare.Delete,
                     bufferSize: ReadBufferBytes,
                     useAsync: true);
+
+                try
+                {
+                    identityHandle = File.OpenHandle(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogTrace(ex, "Failed to open identity handle for {FilePath} (best-effort).", filePath);
+                }
 
                 reader = new StreamReader(fileStream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true);
                 lastKnownPathLength = fileStream.Length;
@@ -211,6 +225,19 @@ public sealed class JsonlTailer : IJsonlTailer
                     continue;
                 }
 
+                // The metadata signals above are only hints: a writer appending between the path-size
+                // read and the handle-length read makes the lengths differ, and some platforms report a
+                // "creation" time that moves on every write (no birth time). Reopening from offset 0 in
+                // those cases replays every line already yielded, so confirm the path really points at
+                // different content before treating it as replaced.
+                if (truncatedOrReplaced &&
+                    currentPathLength >= handlePosition &&
+                    PathHasSamePrefix(filePath, identityHandle, handlePosition))
+                {
+                    lastKnownCreationTimeUtc = currentCreationTimeUtc;
+                    truncatedOrReplaced = false;
+                }
+
                 if (truncatedOrReplaced)
                 {
                     _logger.LogWarning(
@@ -253,6 +280,7 @@ public sealed class JsonlTailer : IJsonlTailer
         {
             reader?.Dispose();
             fileStream?.Dispose();
+            identityHandle?.Dispose();
             _logger.LogDebug("Stopped tailing file: {FilePath}", filePath);
         }
     }
@@ -327,6 +355,61 @@ public sealed class JsonlTailer : IJsonlTailer
                 }
             }
         }
+    }
+
+    private bool PathHasSamePrefix(string filePath, SafeFileHandle? current, long length)
+    {
+        if (current is null || length <= 0)
+        {
+            // Nothing consumed yet, so reopening cannot replay anything.
+            return false;
+        }
+
+        try
+        {
+            using var other = File.OpenHandle(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
+
+            // Compare the head (Codex logs start with a unique session_meta line) and the bytes just
+            // before the current position; that identifies the same file without rereading all of it.
+            var headLength = (int)Math.Min(length, ReadBufferBytes);
+            var tailOffset = Math.Max(headLength, length - ReadBufferBytes);
+            return RangesEqual(current, other, 0, headLength) &&
+                   RangesEqual(current, other, tailOffset, (int)(length - tailOffset));
+        }
+        catch (Exception ex)
+        {
+            _logger.LogTrace(ex, "Failed to compare {FilePath} with the open handle (best-effort).", filePath);
+            return false;
+        }
+    }
+
+    private static bool RangesEqual(SafeFileHandle a, SafeFileHandle b, long offset, int count)
+    {
+        if (count <= 0)
+        {
+            return true;
+        }
+
+        var left = new byte[count];
+        var right = new byte[count];
+        return ReadExactly(a, left, offset) && ReadExactly(b, right, offset) && left.AsSpan().SequenceEqual(right.AsSpan());
+    }
+
+    private static bool ReadExactly(SafeFileHandle handle, byte[] buffer, long offset)
+    {
+        var total = 0;
+        while (total < buffer.Length)
+        {
+            var read = RandomAccess.Read(handle, buffer.AsSpan(total), offset + total);
+            if (read == 0)
+            {
+                return false;
+            }
+
+            total += read;
+        }
+
+        return true;
     }
 
     private static bool IsLineBoundary(FileStream fileStream, long offset)
