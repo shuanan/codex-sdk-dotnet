@@ -46,7 +46,7 @@ public sealed class CodexProcessLauncherIoTests
         var startInfo = OperatingSystem.IsWindows()
             ? new ProcessStartInfo
             {
-                FileName = "pwsh",
+                FileName = "powershell.exe",
                 Arguments = "-NoLogo -NoProfile -NonInteractive -Command \"$text = [Console]::In.ReadToEnd(); [Console]::Out.Write($text)\"",
                 UseShellExecute = false,
                 RedirectStandardInput = true,

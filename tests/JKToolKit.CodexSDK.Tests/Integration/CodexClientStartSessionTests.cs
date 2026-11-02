@@ -203,7 +203,8 @@ public class CodexClientStartSessionTests
         var launcher = new FakeProcessLauncher(process);
         using var client = new CodexClient(Options.Create(new CodexClientOptions
         {
-            StartTimeout = TimeSpan.FromMilliseconds(100), EnableUncorrelatedNewSessionFileDiscovery = true
+            // cmd.exe can take longer than 100 ms to start and exit when the whole suite runs in parallel
+            StartTimeout = TimeSpan.FromMilliseconds(exitEarly ? 5000 : 100), EnableUncorrelatedNewSessionFileDiscovery = true
         }), launcher, new FakeSessionLocator("log"), new FakeTailer([]) { WaitAfterLines = true },
             pathProvider: new FakePathProvider(Path.GetTempPath()), loggerFactory: LoggerFactory);
         var start = () => client.StartSessionAsync(new(Path.GetTempPath(), "prompt"));
