@@ -128,7 +128,7 @@ public sealed class AgentFrameworkRuntimeContractTests
         try
         {
             var launch = OperatingSystem.IsWindows()
-                ? CodexLaunch.FromFileName("pwsh").WithArgs("-NoLogo", "-NoProfile", "-NonInteractive", "-Command",
+                ? CodexLaunch.FromFileName("powershell.exe").WithArgs("-NoLogo", "-NoProfile", "-NonInteractive", "-Command",
                     "[IO.File]::WriteAllText($env:AGENT_RUNTIME_PID_PATH, $PID.ToString()); [Console]::In.ReadLine() | Out-Null; [Console]::Out.WriteLine('{\"id\":1,\"error\":{\"code\":-32603,\"message\":\"handshake rejected\"}}'); [Console]::In.ReadToEnd() | Out-Null")
                 : CodexLaunch.FromFileName("/bin/bash").WithArgs("-c",
                     "printf '%s' \"$$\" > \"$AGENT_RUNTIME_PID_PATH\"; read -r request; printf '%s\\n' '{\"id\":1,\"error\":{\"code\":-32603,\"message\":\"handshake rejected\"}}'; while read -r request; do :; done");
@@ -402,7 +402,7 @@ public sealed class AgentFrameworkRuntimeContractTests
     {
         // This local process only performs the initialization handshake; it never calls Codex.
         var launch = OperatingSystem.IsWindows()
-            ? CodexLaunch.FromFileName("pwsh").WithArgs("-NoLogo", "-NoProfile", "-NonInteractive", "-Command",
+            ? CodexLaunch.FromFileName("powershell.exe").WithArgs("-NoLogo", "-NoProfile", "-NonInteractive", "-Command",
                 "$request = [Console]::In.ReadLine(); [Console]::Out.WriteLine('{\"id\":1,\"result\":{\"request\":' + $request + '}}'); [Console]::In.ReadToEnd() | Out-Null")
             : CodexLaunch.FromFileName("/bin/bash").WithArgs("-c",
                 "read -r request; printf '{\"id\":1,\"result\":{\"request\":%s}}\\n' \"$request\"; while read -r request; do :; done");
